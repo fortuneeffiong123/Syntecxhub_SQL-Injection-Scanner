@@ -15,6 +15,7 @@ Generating a structured scan report
 
 Important: This scanner is intended only for systems that you own or have explicit permission to test.
 
+
 🎯 Project Objectives
 
 The main objectives of this project are to:
@@ -29,6 +30,8 @@ Implement request-rate control using delays.
 Generate security testing reports.
 Maintain logs of scanner activities.
 Demonstrate responsible and ethical cybersecurity practices.
+
+
 🛠️ Technologies Used
 Technology	Purpose
 Python	Scanner development
@@ -41,6 +44,8 @@ Docker	Running the vulnerable testing environment
 DVWA	Authorized SQL injection laboratory
 MySQL/MariaDB	Database used by the DVWA environment
 Visual Studio Code	Development environment
+
+
 📂 Project Structure
 SQL Injection Scanner/
 │
@@ -116,6 +121,8 @@ requirements.txt
 Contains the Python dependency required by the project:
 
 requests==2.34.2
+
+
 ⚙️ Features
 1. SQL Injection Payload Testing
 
@@ -156,6 +163,7 @@ Password: password
 
 The authenticated session is maintained using Python's requests.Session().
 
+
 4. Response Analysis
 
 After sending each test request, the scanner analyzes the response body for database-related indicators.
@@ -167,6 +175,7 @@ mysql
 may indicate that the application returned a database-related error.
 
 The scanner reports these as potential SQL injection indicators, rather than automatically declaring the application vulnerable.
+
 
 5. Basic Concurrency
 
@@ -183,6 +192,8 @@ The number of workers can be configured using:
 Example:
 
 --workers 2
+
+
 6. Request Rate Control
 
 The scanner supports a configurable delay between requests.
@@ -192,6 +203,8 @@ Example:
 --delay 0.5
 
 This introduces a 0.5-second delay between individual test operations.
+
+
 
 7. Logging
 
@@ -207,6 +220,8 @@ Payloads tested
 Request errors
 Scan completion
 Number of findings
+
+
 8. Report Generation
 
 The scanner automatically generates:
@@ -220,6 +235,8 @@ Target URL
 Tested parameter
 Payload
 Detected indicators
+
+
 🚀 Installation
 Prerequisites
 
@@ -237,16 +254,19 @@ python --version
 Verify Docker:
 
 docker --version
+
 1. Open the Project
 
 Open the project folder in Visual Studio Code.
 
 SQL Injection Scanner
+
 2. Create a Virtual Environment
 
 Run:
 
 python -m venv venv
+
 3. Activate the Virtual Environment
 
 On Windows PowerShell:
@@ -256,6 +276,7 @@ On Windows PowerShell:
 The terminal should display something similar to:
 
 (venv) PS C:\...\SQL Injection Scanner>
+
 4. Install Dependencies
 
 Run:
@@ -265,6 +286,8 @@ pip install -r requirements.txt
 Verify Requests:
 
 pip show requests
+
+
 🐳 Setting Up DVWA
 
 This project uses Damn Vulnerable Web Application (DVWA) as an intentionally vulnerable local security-testing environment.
@@ -290,6 +313,7 @@ Low
 
 for the controlled demonstration.
 
+
 🔍 Testing the SQL Injection Page
 
 Navigate to:
@@ -307,6 +331,7 @@ A successful request should produce a URL similar to:
 http://127.0.0.1:8080/vulnerabilities/sqli/?id=1&Submit=Submit
 
 This URL contains the id parameter that the scanner can test.
+
 
 ▶️ Running the Scanner
 
@@ -326,6 +351,8 @@ Analyze HTTP responses.
 Display potential findings.
 Generate a scan report.
 Record activities in the scanner log.
+
+
 ⚙️ Command-Line Options
 
 Display the available options with:
@@ -347,6 +374,7 @@ python scanner.py "http://127.0.0.1:8080/vulnerabilities/sqli/?id=1&Submit=Submi
 --password "password" `
 --delay 0.5 `
 --workers 2
+
 📊 Example Scan Result
 
 A successful local test produced output similar to:
@@ -371,6 +399,7 @@ indicator demonstrates that the scanner identified database-related content in t
 
 The result should be interpreted as a potential indicator, not proof by itself that an arbitrary application is vulnerable.
 
+
 📄 Generated Report
 
 After the scan, the following file is generated:
@@ -378,6 +407,7 @@ After the scan, the following file is generated:
 reports/scan_report.txt
 
 Example report structure:
+
 
 SQL INJECTION SCANNER REPORT
 ============================================================
@@ -390,8 +420,10 @@ URL: http://127.0.0.1:8080/vulnerabilities/sqli/?id=1%27&Submit=Submit
 Parameter: id
 Payload: '
 Indicators: mysql
-📝 Logging
 
+
+
+📝 Logging
 The scanner records activities in:
 
 scanner.log
@@ -404,6 +436,8 @@ INFO - Starting scan against http://127.0.0.1:8080/...
 INFO - Testing parameter=id payload='
 INFO - Testing parameter=id payload=" OR "1"="1
 INFO - Scan completed. Findings=6
+
+
 📸 Project Screenshots
 
 The screenshots directory documents the development and testing process.
@@ -420,6 +454,7 @@ Screenshot	Description
 09_scan_result.png	Detected scan results
 10_scan_report.png	Generated security report
 11_scanner_log.png	Scanner activity log
+
 
 🔐 Security and Ethical Use
 
@@ -438,8 +473,9 @@ The scanner must not be used against websites, applications, servers, APIs, or d
 For this project, testing was performed against a local DVWA environment:
 
 127.0.0.1:8080
-🎓 Learning Outcomes
 
+
+🎓 Learning Outcomes
 This project demonstrates practical knowledge of:
 
 SQL Injection fundamentals
@@ -456,6 +492,7 @@ Report generation
 Docker
 Vulnerability-testing laboratories
 Ethical security testing
+
 🔮 Future Improvements
 
 Potential future improvements include:
@@ -470,13 +507,14 @@ JSON report generation
 Configurable external payload files
 Additional authentication mechanisms
 Broader vulnerability detection capabilities
-⚠️ Disclaimer
 
+⚠️ Disclaimer
 This project is provided for educational and authorized security-testing purposes only.
 
 The developer assumes no responsibility for unauthorized or illegal use of this software.
 
 Always obtain appropriate authorization before conducting security testing against a system.
+
 
 👨‍💻 Author
 
